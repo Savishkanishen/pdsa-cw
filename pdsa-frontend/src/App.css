@@ -1,0 +1,126 @@
+:root {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --primary: #bb86fc;
+  --secondary: #03dac6;
+  --text: #e0e0e0;
+  --error: #cf6679;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; /* Full screen app */
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 350px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+h1 {
+  font-size: 1.5rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1rem;
+  color: var(--secondary);
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+/* Inputs & Buttons */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  background: #2c2c2c;
+  border: 1px solid #444;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button {
+  background: var(--primary);
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+button.generate-btn {
+  background: var(--secondary);
+  width: 100%;
+  font-size: 1.1rem;
+  margin-top: auto; /* Push to bottom */
+}
+
+/* Main Area */
+.graph-area {
+  flex-grow: 1;
+  position: relative;
+  background-image: radial-gradient(#333 1px, transparent 1px);
+  background-size: 20px 20px; /* Dot grid pattern */
+}
+
+/* Floating Path Result Card */
+.path-result {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--secondary);
+  backdrop-filter: blur(10px);
+  max-width: 80%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.step {
+  background: #333;
+  padding: 8px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.arrow {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
